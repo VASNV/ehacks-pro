@@ -12,18 +12,19 @@ buildscript {
 	//mavenLocal()
     }
     dependencies {
-        classpath 'com.anatawa12.forge:ForgeGradle:1.2-1.0.+'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:[1.2-1.4.6-SNAPSHOT,)'
     }
 }
 
+apply plugin: 'java'
 apply plugin: 'forge'
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
 version = "4.1.9"
 group= "ehacks"
 archivesBaseName = "ehacks-pro"
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"
