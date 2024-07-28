@@ -1,18 +1,64 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
         maven {
             name = "forge"
-            url = "https://maven.minecraftforge.net/"
+            url = "https://files.minecraftforge.net/maven"
         }
         maven {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
-	//mavenLocal()
+        maven {
+            name = "maven2-repo1"
+            url = "https://repo1.maven.org/maven2/"
+        }
+        maven {
+            name = "repo_apacheorg"
+            url = "https://repo.maven.apache.org/maven2/"
+        }
+        maven {
+            name = "atlassian"
+            url = "https://packages.atlassian.com/mvn/maven-atlassian-external/"
+        }
+        maven {
+            name = "sonatype-release"
+            url = "https://oss.sonatype.org/content/repositories/releases/"
+        }
+        maven {
+            name = "jbossea"
+            url = "https://repository.jboss.org/nexus/content/repositories/ea/"
+        }
+        maven {
+            name = "atlassian-public"
+            url = "https://maven.atlassian.com/content/repositories/atlassian-public/"
+        }
+        maven {
+            name = "mulesoft-public"
+            url = "https://repository.mulesoft.org/nexus/content/repositories/public/"
+        }
+        maven {
+            name = "wso2-public"
+            url = "https://maven.wso2.org/nexus/content/repositories/public/"
+        }
+        maven {
+            name = "kotlin-dev"
+            url = "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/"
+        }
+        maven {
+            name = "spring-release"
+            url = "https://repo.spring.io/libs-release/"
+        }
+        maven {
+            name = "github"
+            url = "https://github.com/juanmuscaria/maven/raw/master"
+        }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:[1.2-1.4.6-SNAPSHOT,)'
+        classpath('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {
+            changing = true
+        }
     }
 }
 
@@ -42,6 +88,60 @@ repositories {
         name "Mobius Repo"
         url "http://mobiusstrip.eu/maven"
     }
+mavenCentral()
+        jcenter()
+        maven {
+            name = "forge"
+            url = "https://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+        maven {
+            name = "maven2-repo1"
+            url = "https://repo1.maven.org/maven2/"
+        }
+        maven {
+            name = "repo_apacheorg"
+            url = "https://repo.maven.apache.org/maven2/"
+        }
+        maven {
+            name = "atlassian"
+            url = "https://packages.atlassian.com/mvn/maven-atlassian-external/"
+        }
+        maven {
+            name = "sonatype-release"
+            url = "https://oss.sonatype.org/content/repositories/releases/"
+        }
+        maven {
+            name = "jbossea"
+            url = "https://repository.jboss.org/nexus/content/repositories/ea/"
+        }
+        maven {
+            name = "atlassian-public"
+            url = "https://maven.atlassian.com/content/repositories/atlassian-public/"
+        }
+        maven {
+            name = "mulesoft-public"
+            url = "https://repository.mulesoft.org/nexus/content/repositories/public/"
+        }
+        maven {
+            name = "wso2-public"
+            url = "https://maven.wso2.org/nexus/content/repositories/public/"
+        }
+        maven {
+            name = "kotlin-dev"
+            url = "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/"
+        }
+        maven {
+            name = "spring-release"
+            url = "https://repo.spring.io/libs-release/"
+        }
+        maven {
+            name = "github"
+            url = "https://github.com/juanmuscaria/maven/raw/master"
+        }
 }
 
 dependencies {
