@@ -1,0 +1,34 @@
+name: Build and Upload Gradle Artifact
+
+on:
+  push:
+    branches:
+      - main # Измените на вашу основную ветку
+  workflow_dispatch:    
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17' # Измените на нужную версию JDK
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@dbbdc275be76ac10734476cc723d82dfe7ec6eda # Используйте актуальную версию
+        with:
+          gradle-version: '7.3' # Измените на нужную версию Gradle
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Package
+          path: build/libs
